@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <!-- Icon -->
+    <link rel="icon" href="/public/img/logo.png">
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- CDN Bootstrap & Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-body">
+        <div class="container-fluid">
+            <a href="/" class="navbar-brand ms-5"><img src="/public/img/logo.png" alt="logo" width="50px"></a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link" aria-current="page">Home</a>
+                    </li>
+                    {{if .Data.IsLogin}}
+                    <li class="nav-item">
+                        <a href="/project" class="nav-link">Add Project</a>
+                    </li>
+                    {{else}}
+                    {{end}}
+                </ul>
+                <ul class="navbar-nav me-3">
+                    {{if .Data.IsLogin}}
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Hello, {{.Data.Username}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/logout" class="nav-link">Logout</a>
+                    </li>
+                    {{else}}
+                    <li class="nav-item">
+                        <a href="/register" class="nav-link">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/login" class="nav-link">Login</a>
+                    </li>
+                    {{end}}
+                </ul>
+            </div>
+            <div class="d-flex justify-content-end">
+                <a href="/contact"><button type="button" class="btn btn-primary me-5">Contact Me</button></a>
+            </div>
+            <!-- Button navbar mobile start -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle-navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Button navbar mobile end -->
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <!-- Main Start -->
+    <main>
+        <!-- Form Start -->
+        <div class="container mt-5" style="width: 40vw;">
+            <h3 style="text-align: center;" class="mb-4">GET IN TOUCH</h3>
+            <form onsubmit="submitData(event)">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control shadow-sm rounded" id="name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" class="form-control shadow-sm rounded" id="email">
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="number" class="form-control shadow-sm rounded" id="phone">
+                </div>
+                <div class="mb-3">
+                    <label for="subject" class="form-label">Subject</label>
+                    <select name="subject" id="subject" class="form-select shadow-sm rounded">
+                        <option value="frontend">Frontend Developer</option>
+                        <option value="backend">Backend Developer</option>
+                        <option value="fullstack">Fullstack Developer</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Your Message</label>
+                    <textarea id="message" class="form-control shadow-sm rounded" style="height: 150px;"></textarea>
+                </div>
+                <div class="mb-4 d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+        <!-- Form End -->
+    </main>
+    <!-- Main End -->
+    <!-- Script -->
+    <script src="/public/js/contact.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>

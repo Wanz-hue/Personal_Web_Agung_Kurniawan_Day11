@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sora', sans-serif;
+}
+
+body {
+    background-color: #EDDBC0 !important;
+}
+
+ul.navbar-nav li.nav-item a.nav-link.active {
+    color: orangered !important;
+}
+
+ul.navbar-nav li.nav-item a.nav-link:hover {
+    color: orangered !important;
+    transition: 500ms;
+}
+
+.navbar.navbar {
+    background-color: #CFB997 !important;
+}
+
+
+.btn.btn-primary {
+    background-color: rgb(103, 102, 102) !important;
+    border: none;
+}
+
+.btn.btn-primary:hover {
+    background-color: orangered !important;
+    transition: 500ms;
+}
+
+.btn.btn-primary.active {
+    background-color: orangered !important;
+}
+
+.form-control{
+    resize: none;
+}
